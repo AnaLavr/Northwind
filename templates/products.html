@@ -8,22 +8,22 @@
   <body>
   <section class="section">
     <div class="container">
-      <h1> SUPPLIERS FOR NORTHWIND </h1>
+      <h1 class="title is-1"> {{  header }} </h1>
 
 <table  class=table >
   <thead>
   <tr>
-    <th>Company name</th>
-    <th>City </th>
-    <th>Country </th>
+    <th> Product Name</th>
+    <th> Quantity Per Unit  </th>
+    <th> UnitPrice </th>
   </tr>
   </thead >
   <tbody>
-    {% for fact in facts%}
+    {% for product in products%}
   <tr>
-    <td><a href="{{url_for('products',supplier_id=fact['Id'])}}"> {{fact ['CompanyName']}}</a></td> <!--add ID on the database, otherwise its not found. url for the next html page, then value that we need and where to find it-->
-    <td>{{fact ['City']}}</td>
-    <td>{{fact ['Country']}}</td>
+    <td>{{product ['ProductName']}}</td>  
+    <td>{{product ['QuantityPerUnit']}}</td>
+    <td>{{product['UnitPrice']}}</td>
   </tr>
   {% endfor%}
 </tbody>
