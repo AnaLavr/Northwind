@@ -8,22 +8,22 @@
   <body>
   <section class="section">
     <div class="container">
-      <h1 class="title is-1"> {{  header }} </h1>
+      <h1>CATEGORIES</h1>
 
 <table  class=table >
   <thead>
   <tr>
-    <th> Product Name</th>
-    <th> Quantity Per Unit  </th>
-    <th> UnitPrice </th>
+    <th>Category name</th>
+    <th>Description </th>
+    <th>Product Count </th>
   </tr>
   </thead >
   <tbody>
-    {% for product in products%}
+    {% for cat in category%}
   <tr>
-    <td><a href="{{url_for('catdetails', category_id=product ['CategoryId'])}}"> {{product ['ProductName']}} </a> </td>  
-    <td>{{product ['QuantityPerUnit']}}</td>
-    <td>{{product['UnitPrice']}}</td>
+    <td>  <a href="{{url_for('catdetails',category_id=cat['Id'])}}"> {{cat ['CategoryName']}} </a></td> 
+    <td>{{cat ['Description']}}</td> 
+    <td>{{cat ['Product Count']}}</td>
   </tr>
   {% endfor%}
 </tbody>

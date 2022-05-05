@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -14,16 +13,18 @@
   <thead>
   <tr>
     <th> Product Name</th>
-    <th> Quantity Per Unit  </th>
-    <th> UnitPrice </th>
+    <th>  Company Name  </th>
+    <!--add ID on the database, otherwise its not found. url for the next html page, then 
+        value that we need and where to find it-->
+    
   </tr>
   </thead >
   <tbody>
-    {% for product in products%}
+    {% for detail in details%}
   <tr>
-    <td><a href="{{url_for('catdetails', category_id=product ['CategoryId'])}}"> {{product ['ProductName']}} </a> </td>  
-    <td>{{product ['QuantityPerUnit']}}</td>
-    <td>{{product['UnitPrice']}}</td>
+    <td>  {{detail ['ProductName']}}  </td>  
+    <td>  <a href="{{url_for('products',supplier_id=detail['CategoryId'])}}"> {{detail ['CompanyName']}} </a></td>
+   
   </tr>
   {% endfor%}
 </tbody>
@@ -34,4 +35,3 @@
   </body>
 </html>
         
-
